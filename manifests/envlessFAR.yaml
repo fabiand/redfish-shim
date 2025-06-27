@@ -1,3 +1,6 @@
+# NHC would include the node which is being fenced by a request in the remediation template
+# FAR would read this annotation, and allow it to be used in parameters.
+# 
 apiVersion: fence-agents-remediation.medik8s.io/v1alpha1
 kind: FenceAgentsRemediation
 metadata:

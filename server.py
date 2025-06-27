@@ -90,11 +90,13 @@ class RedfishServer:
         }
     
     def get_systems_collection(self) -> dict:
+        members = ['/redfish/v1/Systems/1']
+
         return {
             '@odata.type': '#ComputerSystemCollection.ComputerSystemCollection',
             'Name': 'Computer System Collection',
-            'Members': [{'@odata.id': '/redfish/v1/Systems/1'}],
-            'Members@odata.count': 1
+            'Members': [{'@odata.id': member} for member in members],
+            'Members@odata.count': len(members)
         }
     
     def get_system(self) -> dict:

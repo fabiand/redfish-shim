@@ -4,7 +4,7 @@ Shim api to handle `fence_redfish` calls.
 
 # Requirements
 
-    $ sudo dnf install python3-cryptography.x86_64 fence-agents-redfish.x86_64
+    $ sudo dnf install python3-cryptography.x86_64 fence-agents-redfish.x86_64 python3-flask.noarch
 
 # Usage
 
