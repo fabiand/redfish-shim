@@ -1,0 +1,19 @@
+apiVersion: fence-agents-remediation.medik8s.io/v1alpha1
+kind: FenceAgentsRemediation
+metadata:
+  name: w5678
+  annotations:
+    medik8s.io/nodeName: w5678
+spec:
+  agent: fence_redfish
+  retrycount: 5
+  retryinterval: "5s"
+  timeout: "60s"
+  sharedparameters:
+    --username: "admin"
+    --action: "reboot"
+    --ip: "shimendpoint.example.com"
+    --systems-uri: "/redfish/v1/Systems/{{.NodeName}}"
+  remediationStrategy: OutOfServiceTaint
+  sharedSecretName: fence-agents-credentials-shared
+
